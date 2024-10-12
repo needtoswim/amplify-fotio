@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link';
+//import Image from 'next/image'
+//import Link from 'next/link';
 import './globals.css'
 import classes from "./page.module.css"
 import Backdrop from './ui/backdrop/Backdrop'
