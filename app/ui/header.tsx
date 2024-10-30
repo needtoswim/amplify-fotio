@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import '../../app/globals.css'
+//import { currUser }  from '../components/userDetails'
+
 const Header = () => {
   
   return (
@@ -9,11 +11,12 @@ const Header = () => {
         <div className="flex basis-3/12">
           <Link href="/">
             <div className='text-lg font-bold text-white uppercase px-4'>
-              f o t i o . m e
-            </div>
-          </Link>
-        </div>
-        <div className="md:hidden"> 
+                f o t i o . m e
+            </div>    
+          </Link>      
+            <div className="text-lg font-bold text-white uppercase px-4">
+              {/* {currUser} */}
+              </div>  
             <button id="hamburger-button" type="button" className="relative h-8 w-8 cursor-pointer text-3xl md:hidden">
               {/* &#9776; */}
               <div
@@ -48,7 +51,7 @@ const Header = () => {
         </div>
         <div className="flex basis-3/12">
         <Link
-              href='ui/signin'
+              href='signin'
               className='text-xl text-white mr-4 hover:text-white hover:text-2xl rounded'
             >
               Sign In
