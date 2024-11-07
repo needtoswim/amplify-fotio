@@ -1,6 +1,11 @@
 'use client'
 import Footer from './ui/footer'
 import Header from './ui/header'
+import { Hub } from 'aws-amplify/utils';
+
+Hub.listen('auth', (data) => {
+  console.log(data)
+});
 //import { Authenticator } from '@aws-amplify/ui-react';
 //import  Navbar  from './components/layout/navbar'
 //import { inter } from '@/app/ui/fonts';
