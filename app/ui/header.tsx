@@ -2,6 +2,8 @@ import Link from 'next/link';
 import '../../app/globals.css'
 //import { currUser }  from '../components/userDetails'
 
+const signedIn = true
+
 const Header = () => {
   
   return (
@@ -27,14 +29,17 @@ const Header = () => {
         <div className="flex basis-6/12 hidden md:block">
           <Link
               href='galleries'
-              className='text-xl text-white mr-4 hover:text-white hover:text-2xl rounded' 
+              className={"text-xl text-white mr-4 hover:text-white hover:text-2xl rounded "
+                  + (signedIn ? "visible" : "invisible")}
+               
             >
               Galleries
           </Link>
         
           <Link
-              href='galleries'
-              className='text-xl text-white mr-4 hover:text-white hover:text-2xl rounded' 
+              href='dashboard'
+              className={"text-xl text-white mr-4 hover:text-white hover:text-2xl rounded "
+                + (signedIn ? "visible" : "invisible")} 
             >
               Dashboard
           </Link>
@@ -46,16 +51,30 @@ const Header = () => {
               Introduction
             </Link>
 
+            <Link
+              href='introduction'
+              className='text-xl text-white mr-4 hover:text-white hover:text-2xl rounded'
+            >
+              FAQ
+            </Link>
                       
             
         </div>
         <div className="flex basis-3/12">
         <Link
               href='signin'
-              className='text-xl text-white mr-4 hover:text-white hover:text-2xl rounded'
+              className={"text-xl text-white mr-4 hover:text-white hover:text-2xl rounded "
+                + (signedIn ? "invisible" : "visible")}
             >
               Sign In
             </Link>
+            <Link
+              href='signout'
+              className={"text-xl text-white mr-4 hover:text-white hover:text-2xl rounded "
+                  + (signedIn ? "visible" : "invisible")}
+            >
+              Sign Out
+        </Link>    
         </div>      
       </div>
       </section>
