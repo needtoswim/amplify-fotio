@@ -2,7 +2,7 @@ import Link from 'next/link';
 import '../../app/globals.css'
 //import { currUser }  from '../components/userDetails'
 
-const signedIn = true
+const signedIn = false
 
 const Header = () => {
   
