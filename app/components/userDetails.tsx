@@ -1,28 +1,28 @@
-'use client'
-import { getCurrentUser } from 'aws-amplify/auth';
-import { Amplify } from 'aws-amplify';
-import outputs from "@/amplify_outputs.json";
+// 'use client'
+// import { getCurrentUser } from 'aws-amplify/auth';
+// import { Amplify } from 'aws-amplify';
+// import outputs from "@/amplify_outputs.json";
 
-Amplify.configure(outputs);
+// Amplify.configure(outputs);
 
-async function userDetails() {
-    let userDet = "Not Signed In"
-    try {
-        const { username, userId, signInDetails } = await getCurrentUser();
+// async function userDetails() {
+//     let userDet = "Not Signed In"
+//     try {
+//         const { username, userId, signInDetails } = await getCurrentUser();
         
-        console.log(`username ${ username }`) 
-        console.log(`userId ${ userId }`) 
-        console.log(`signInDetails ${ signInDetails }`) 
-               userDet = username
-               return userDet
+//         console.log(`username ${ username }`) 
+//         console.log(`userId ${ userId }`) 
+//         console.log(`signInDetails ${ signInDetails }`) 
+//                userDet = username
+//                return userDet
        
-    } catch (error) {
-        console.log(error);
-    }
+//     } catch (error) {
+//         console.log(error);
+//     }
       
-}
+// }
 
-export const currUser = userDetails();
+// export const currUser = userDetails();
 
 // function userStatus(isMember: boolean) {
 //     return isMember ? 'Member' : 'Guest';
