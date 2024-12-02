@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import '../../app/globals.css'
+import { sessionStorage } from 'aws-amplify/utils';
 
 
-const Header = () => {
-  
+const Header = () => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+  console.log(sessionStorage.getItem('username'))
   return (
     <>
       <section>
-      <div className="flex flex-row p-6">
+      <div className="flex flex-row p-6">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
         <div className="flex basis-3/12">
           <Link href="/">
             <div className='text-lg font-bold text-white uppercase px-4'>
@@ -79,6 +80,9 @@ const Header = () => {
             >Legal</a
           >
         </nav>
+        <div>
+          <p id="myUsername"/>
+        </div>
 
       </section>
         

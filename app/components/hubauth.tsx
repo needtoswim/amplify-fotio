@@ -1,5 +1,12 @@
 'use client'
 import { Hub } from 'aws-amplify/utils';
+import SaveUser from '../lib/localstore'
+
+interface User {
+  username: string;
+  userid: string;
+  email: string;
+}
 
   Hub.listen('auth', ({ payload }) => {
     let eventType: string = "No Event"
@@ -7,14 +14,19 @@ import { Hub } from 'aws-amplify/utils';
     switch (payload.event) {
       case 'signedIn':
         eventType = "Signed In"
-        console.log('user have been signedIn successfully.');
-        console.log('Signin Payload', payload)
-        
+        const currentUser: User = {
+          "username": payload.data.username,
+          "userid": payload.data.userId,
+          "email": payload.data.loginId
+        };
+        console.log("Sign in user", currentUser)
+        SaveUser(currentUser)
+               
         break;
       case 'signedOut':
         eventType = "Signed Out"
-        console.log('user have been signedOut successfully.');
-        console.log('SignedOut Payload', payload)
+         console.log('user have been signedOut successfully.');
+        // console.log('SignedOut Payload', payload)
         break;
       case 'tokenRefresh':
         eventType = "Token Refresh"
